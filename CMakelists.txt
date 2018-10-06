@@ -1,0 +1,21 @@
+# CMake 最低版本号要求
+cmake_minimum_required (VERSION 3.7)
+# 项目信息
+project (myMuduo)
+#添加头文件目录
+include_directories(./include)
+#设置编译器
+SET(CMAKE_CXX_COMPILER "g++")
+#设置C++11标准
+set(CXX_FLAGS
+        -std=c++11
+		-g
+        -Wall
+        -Werror
+		-Wnoexcept
+)
+#添加库
+add_subdirectory(source)
+# 指定生成目标
+add_executable(server main.cc)
+TARGET_LINK_LIBRARIES(server source)

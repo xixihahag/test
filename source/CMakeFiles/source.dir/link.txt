@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsource.a  CMakeFiles/source.dir/Acceptor.cc.o CMakeFiles/source.dir/Buffer.cc.o CMakeFiles/source.dir/Channel.cc.o CMakeFiles/source.dir/EchoServer.cc.o CMakeFiles/source.dir/Epoll.cc.o CMakeFiles/source.dir/EventLoop.cc.o CMakeFiles/source.dir/TcpConnection.cc.o CMakeFiles/source.dir/TcpServer.cc.o
+/usr/bin/ranlib libsource.a

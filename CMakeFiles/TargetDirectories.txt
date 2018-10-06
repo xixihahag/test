@@ -1,0 +1,6 @@
+/media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/CMakeFiles/rebuild_cache.dir
+/media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/CMakeFiles/edit_cache.dir
+/media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/CMakeFiles/server.dir
+/media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/source/CMakeFiles/rebuild_cache.dir
+/media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/source/CMakeFiles/edit_cache.dir
+/media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/source/CMakeFiles/source.dir

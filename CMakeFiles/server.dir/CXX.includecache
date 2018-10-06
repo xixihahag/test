@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+./include/Buffer.h
+string
+-
+
+./include/Declear.h
+
+./include/EchoServer.h
+TcpServer.h
+./include/TcpServer.h
+IMuduoUser.h
+./include/IMuduoUser.h
+Buffer.h
+./include/Buffer.h
+
+./include/EventLoop.h
+Declear.h
+./include/Declear.h
+
+./include/IAcceptorCallBack.h
+
+./include/IMuduoUser.h
+string
+-
+Declear.h
+./include/Declear.h
+
+./include/TcpServer.h
+Declear.h
+./include/Declear.h
+IAcceptorCallBack.h
+./include/IAcceptorCallBack.h
+
+/media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/main.cc
+EchoServer.h
+/media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/EchoServer.h
+EventLoop.h
+/media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/EventLoop.h
+
