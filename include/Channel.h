@@ -54,8 +54,8 @@ class Channel
     void setIndex(int index);
 
   private:
-    void modify(); //修改epoll
-    void regist(); //注册epoll
+    void modify(); // 修改epoll
+    void regist(); // 注册epoll
 };
 
 #endif // __CHANNEL_H__

@@ -26,11 +26,11 @@ class EchoServer : public IMuduoUser
     EchoServer(EventLoop *loop);
     ~EchoServer();
 
-    void start(); //初始化sock4网络连接
+    void start(); // 初始化sock4网络连接
     void virtual onMessage(
         TcpConnection *pCon,
-        Buffer *pBuf); //数据传递结束的回调函数
-    void virtual onConnection(TcpConnection *pCon); //新链接建立后的回调函数
+        Buffer *pBuf); // 数据传递结束的回调函数
+    void virtual onConnection(TcpConnection *pCon); // 新链接建立后的回调函数
 };
 
 #endif // __ECHOSERVER_H__

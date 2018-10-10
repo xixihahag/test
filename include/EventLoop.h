@@ -17,7 +17,7 @@
 class EventLoop
 {
   private:
-    bool quit_;
+    bool quit_; // 是否退出事件监听循环
     Epoll *poller_;
 
   public:

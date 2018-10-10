@@ -23,16 +23,17 @@ class TcpConnection : public IChannelCallBack
     int sockfd_;
     Channel *pChannel_;
     IMuduoUser *pUser_;
-    Buffer inBuf_;
-    Buffer outBuf_;
+    Buffer inBuf_;  // 输入缓冲区
+    Buffer outBuf_; // 输出缓冲
 
   public:
     TcpConnection(int sockfd, EventLoop *loop);
     ~TcpConnection();
-    void virtual handleRead();
-    void virtual handleWrite();
-    void setUser(IMuduoUser *user);
-    void send(const std::string &message);
+
+    void virtual handleRead();             // 接收数据
+    void virtual handleWrite();            // 发送数据
+    void setUser(IMuduoUser *user);        // 设置上级
+    void send(const std::string &message); // 数据处理分割
 };
 
 #endif // __TCPCONNECTION_H__

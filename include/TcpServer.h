@@ -25,9 +25,9 @@ class TcpServer : public IAcceptorCallBack
   public:
     TcpServer(EventLoop *loop);
     ~TcpServer();
-    void start();
-    void setUser(IMuduoUser *user);
-    virtual void newConnection(int sockfd);
+    void start();                           // new accoptor
+    void setUser(IMuduoUser *user);         // 设置上级
+    virtual void newConnection(int sockfd); // new connection
 };
 
 #endif // __TCPSERVER_H__

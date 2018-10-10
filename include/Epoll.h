@@ -28,8 +28,8 @@ class Epoll
     void initialize();
     // 阻塞轮询
     int poll(Channel *channels[], int length);
-    int regist(Channel &channel);
-    int modify(Channel &channel);
+    int regist(Channel &channel); // 注册epoll事件 ADD
+    int modify(Channel &channel); // 修改epoll事件 MOD
 };
 
 #endif // __EPOLL_H__

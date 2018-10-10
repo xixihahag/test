@@ -34,11 +34,11 @@ class Acceptor : public IChannelCallBack
     Acceptor(EventLoop *loop);
     ~Acceptor();
 
-    void setCallBack(IAcceptorCallBack *pCallBack);
-    void start();
-    int createAndListen();
-    void virtual handleRead();
-    void virtual handleWrite();
+    void setCallBack(IAcceptorCallBack *pCallBack); // 设置函数回调
+    void start();               // 进行acceptor的channel的初始化
+    int createAndListen();      // socket bind listen
+    void virtual handleRead();  // 有新conect到来，通知上层进行接收
+    void virtual handleWrite(); // 空
 };
 
 #endif // _Acceptor__H__

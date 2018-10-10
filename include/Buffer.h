@@ -16,18 +16,19 @@
 
 class Buffer
 {
+  private:
+    std::string buf_; //缓冲区
+
   public:
     Buffer();
     ~Buffer();
-    void append(const std::string &buf);
-    void retrieve(int len);
-    std::string retrieveAllAsString();
-    std::string retrieveAsString(size_t len);
-    int readableBytes();
-    const char *peek();
 
-  private:
-    std::string buf_;
+    void append(const std::string &buf);      // 追加
+    void retrieve(int len);                   // 扔掉缓冲中前len个字节
+    std::string retrieveAllAsString();        // 取出全部缓冲区数据
+    std::string retrieveAsString(size_t len); // 取缓冲区中前len个字节
+    int readableBytes();                      // 缓冲区中有多少字节
+    const char *peek();                       // 缓冲区转换成char
 };
 
 #endif // __BUFFER_H__

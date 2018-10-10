@@ -16,10 +16,10 @@
 #define S_FAIL -1 // 缺省错误
 
 #define MAX_LINE 1024
-#define MAXevents_ 48 // 64
-#define MAX_LISTENQ 10
+#define MAXevents_ 48  // 64
+#define MAX_LISTENQ 10 // listen最大监听数量
 #define SA struct sockaddr
-#define SERV_PORT 11111
-#define MESSAGE_LENGTH 8 //一次性传输数据大小
+#define SERV_PORT 11111  //默认接收端口
+#define MESSAGE_LENGTH 8 // 一次性传输数据大小
 
 #endif // __DEFINE_H__
