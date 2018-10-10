@@ -21,10 +21,7 @@
 EventLoop::EventLoop()
     : quit_(false)
     , poller_(new Epoll)
-{
-    // LOG(INFO) << "test";
-    // printf("new EventLoop\n");
-}
+{}
 
 EventLoop::~EventLoop() {}
 

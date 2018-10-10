@@ -14,6 +14,7 @@
 #include <cstdio>
 #include <string.h>
 #include <errno.h>
+#include <glog/logging.h>
 
 #include "../include/TcpConnection.h"
 #include "../include/Define.h"
@@ -27,26 +28,30 @@ TcpConnection::TcpConnection(int sockfd, EventLoop *loop)
     : sockfd_(sockfd)
     , loop_(loop)
 {
-    // printf("new TcpConnection\n");
+    this->createChannel();
+}
+
+TcpConnection::~TcpConnection() {}
+
+void TcpConnection::createChannel()
+{
     pChannel_ = new Channel(loop_, sockfd_);
     pChannel_->setCallBack(this);
     pChannel_->enableReading();
 }
 
-TcpConnection::~TcpConnection() {}
-
 void TcpConnection::handleRead()
 {
-    printf("this is TcpConnection::handleRead()\n");
+    // printf("this is TcpConnection::handleRead()\n");
     int sockfd = pChannel_->getSockfd();
     int len;
     char line[MAX_LINE];
     memset(line, 0, sizeof(line));
     if ((len = read(sockfd, line, MAX_LINE)) < 0) {
-        printf("read error\n");
+        LOG(ERROR) << "read error\n";
         return;
     } else if (len == 0) {
-        printf("connect close\n");
+        LOG(INFO) << "connect close\n";
         close(sockfd);
     } else {
         string linestr(line, len);
@@ -61,7 +66,7 @@ void TcpConnection::handleWrite()
     if (pChannel_->isWriting()) {
         int n = ::write(sockfd, outBuf_.peek(), outBuf_.readableBytes());
         if (n > 0) {
-            printf("write %d bytes data again\n", n);
+            LOG(INFO) << "write " << n << " bytes data again\n";
             outBuf_.retrieve(n);
             if (outBuf_.readableBytes() == 0) { pChannel_->disableWriting(); }
         }

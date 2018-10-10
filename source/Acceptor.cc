@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <cstring>
 #include <fcntl.h>
+#include <glog/logging.h>
 
 #include "../include/Acceptor.h"
 #include "../include/Channel.h"
@@ -39,8 +40,11 @@ struct sockaddr_in initSockAddr4()
 
 int Acceptor::createAndListen()
 {
-    printf("this is createAndListen\n");
-    listenfd_ = socket(AF_INET, SOCK_STREAM, 0);
+    // printf("this is createAndListen\n");
+    if ((listenfd_ = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+        LOG(ERROR) << "socket failed";
+    else
+        LOG(INFO) << "socket success\n";
 
     struct sockaddr_in servaddr = initSockAddr4();
 
@@ -49,25 +53,28 @@ int Acceptor::createAndListen()
     fcntl(listenfd_, F_SETFL, O_NONBLOCK);
 
     listen(listenfd_, MAX_LISTENQ);
-    printf("createAndListen end\n");
+    // printf("createAndListen end\n");
 
     return listenfd_;
 }
 
 void Acceptor::start()
 {
-    printf("this is Acceptor::start()\n");
+    // printf("this is Acceptor::start()\n");
     listenfd_ = createAndListen();
     acceptChannel_ = new Channel(loop_, listenfd_);
     acceptChannel_->setCallBack(this);
     acceptChannel_->enableReading();
-    printf("start end\n");
+    // printf("start end\n");
 }
 
 void Acceptor::handleRead()
 {
     int connfd;
-    connfd = accept(listenfd_, NULL, NULL);
+    if ((connfd = accept(listenfd_, NULL, NULL)) < 0)
+        LOG(WARNING) << "accept failed";
+    else
+        LOG(INFO) << "new connection\n";
     fcntl(connfd, F_SETFL, O_NONBLOCK);
 
     pCallBack_->newConnection(connfd);

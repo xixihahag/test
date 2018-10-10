@@ -81,6 +81,8 @@ cstring
 -
 fcntl.h
 -
+glog/logging.h
+-
 ../include/Acceptor.h
 /media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/include/Acceptor.h
 ../include/Channel.h
@@ -111,6 +113,8 @@ cstdio
 /media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/source/EchoServer.cc
 string
 -
+glog/logging.h
+-
 ../include/EchoServer.h
 /media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/include/EchoServer.h
 ../include/Define.h
@@ -122,6 +126,8 @@ string
 sys/epoll.h
 -
 unistd.h
+-
+glog/logging.h
 -
 ../include/Epoll.h
 /media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/include/Epoll.h
@@ -154,6 +160,8 @@ cstdio
 string.h
 -
 errno.h
+-
+glog/logging.h
 -
 ../include/TcpConnection.h
 /media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/include/TcpConnection.h

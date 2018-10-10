@@ -1,4 +1,5 @@
 #include <string>
+#include <glog/logging.h>
 
 #include "../include/EchoServer.h"
 #include "../include/Define.h"
@@ -18,7 +19,7 @@ void EchoServer::start() { pServer_.start(); }
 
 void EchoServer::onMessage(TcpConnection *pCon, Buffer *pBuf)
 {
-    printf("pBuf = %s\n", pBuf->peek());
+    // printf("pBuf = %s\n", pBuf->peek());
 
     if (pBuf->readableBytes() > 0 && pBuf->readableBytes() <= MESSAGE_LENGTH) {
         pCon->send(pBuf->retrieveAllAsString());

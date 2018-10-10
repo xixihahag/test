@@ -1,5 +1,7 @@
 #include <sys/epoll.h>
 #include <unistd.h>
+#include <glog/logging.h>
+
 #include "../include/Epoll.h"
 #include "../include/Channel.h"
 #include "../include/Define.h"
@@ -14,9 +16,10 @@ Epoll::Epoll()
 
 void Epoll::initialize()
 {
-    epfd_ = epoll_create(1);
-    // if (epfd_ < 0)
-    // log();
+    if ((epfd_ = epoll_create(1)) < 0)
+        LOG(ERROR) << "epoll_create failed\n";
+    else
+        LOG(INFO) << "epoll create\n";
 }
 
 Epoll::~Epoll()
@@ -24,12 +27,10 @@ Epoll::~Epoll()
     if (epfd_ != -1) ::close(epfd_);
 }
 
-//
 int Epoll::poll(Channel *channels[], int length)
 {
     struct epoll_event events[MAXevents_]; // 在栈上分配内存
     int ret = epoll_wait(epfd_, events, MAXevents_, -1);
-    if (ret != -1) {}
 
     // 遍历获得的事件集合
     for (int i = 0; i < ret; i++) {

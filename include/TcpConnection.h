@@ -34,6 +34,7 @@ class TcpConnection : public IChannelCallBack
     void virtual handleWrite();            // 发送数据
     void setUser(IMuduoUser *user);        // 设置上级
     void send(const std::string &message); // 数据处理分割
+    void createChannel();                  // 创建新Channel
 };
 
 #endif // __TCPCONNECTION_H__
