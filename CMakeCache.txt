@@ -171,8 +171,8 @@ myMuduo_BINARY_DIR:STATIC=/media/sf_shareVirtualBox/mini_muduo/refac_mymuduo
 //Value Computed by CMake
 myMuduo_SOURCE_DIR:STATIC=/media/sf_shareVirtualBox/mini_muduo/refac_mymuduo
 
-//Dependencies for target
-source_LIB_DEPENDS:STATIC=
+//Dependencies for the target
+source_LIB_DEPENDS:STATIC=general;glog;
 
 
 ########################

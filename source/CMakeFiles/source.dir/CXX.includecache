@@ -135,6 +135,8 @@ cstdio
 -
 vector
 -
+glog/logging.h
+-
 ../include/EventLoop.h
 /media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/include/EventLoop.h
 ../include/Channel.h

@@ -1,1 +1,1 @@
-g++      CMakeFiles/server.dir/main.cc.o  -o server source/libsource.a 
+g++      CMakeFiles/server.dir/main.cc.o  -o server source/libsource.a -lglog 

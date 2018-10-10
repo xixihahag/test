@@ -39,6 +39,8 @@ IAcceptorCallBack.h
 ./include/IAcceptorCallBack.h
 
 /media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/main.cc
+glog/logging.h
+-
 EchoServer.h
 /media/sf_shareVirtualBox/mini_muduo/refac_mymuduo/EchoServer.h
 EventLoop.h

@@ -1,21 +1,22 @@
-# CMake ×îµÍ°æ±¾ºÅÒªÇó
+# CMake ï¿½ï¿½Í°æ±¾ï¿½ï¿½Òªï¿½ï¿½
 cmake_minimum_required (VERSION 3.7)
-# ÏîÄ¿ÐÅÏ¢
+# ï¿½ï¿½Ä¿ï¿½ï¿½Ï¢
 project (myMuduo)
-#Ìí¼ÓÍ·ÎÄ¼þÄ¿Â¼
+#ï¿½ï¿½ï¿½Í·ï¿½Ä¼ï¿½Ä¿Â¼
 include_directories(./include)
-#ÉèÖÃ±àÒëÆ÷
+#ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½
 SET(CMAKE_CXX_COMPILER "g++")
-#ÉèÖÃC++11±ê×¼
+#ï¿½ï¿½ï¿½ï¿½C++11ï¿½ï¿½×¼
 set(CXX_FLAGS
+        -lglog
         -std=c++11
 		-g
         -Wall
         -Werror
 		-Wnoexcept
 )
-#Ìí¼Ó¿â
+#ï¿½ï¿½Ó¿ï¿½
 add_subdirectory(source)
-# Ö¸¶¨Éú³ÉÄ¿±ê
+# Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½
 add_executable(server main.cc)
 TARGET_LINK_LIBRARIES(server source)

@@ -1,3 +1,5 @@
 cmake_minimum_required(VERSION 3.7)
 set(DIR_SOURCE_SRCS Acceptor.cc Buffer.cc Channel.cc EchoServer.cc Epoll.cc EventLoop.cc TcpConnection.cc TcpServer.cc)
+# 链接log的动态库
+link_libraries(glog)
 add_library(source ${DIR_SOURCE_SRCS})

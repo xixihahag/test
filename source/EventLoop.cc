@@ -11,6 +11,7 @@
 
 #include <cstdio>
 #include <vector>
+#include <glog/logging.h>
 
 #include "../include/EventLoop.h"
 #include "../include/Channel.h"
@@ -21,6 +22,7 @@ EventLoop::EventLoop()
     : quit_(false)
     , poller_(new Epoll)
 {
+    // LOG(INFO) << "test";
     // printf("new EventLoop\n");
 }
 
